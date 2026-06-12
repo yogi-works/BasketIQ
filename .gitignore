@@ -2,6 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
 /BasketIQ.API/.vs/BasketIQ.API.slnx
+/BasketIQ.APP/BasketIQ/.vscode
 /BasketIQ.API/.vs/ProjectEvaluation
