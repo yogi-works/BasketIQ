@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BasketIQ.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8f9ac161f5b3afb92dd696f55dfa699654e93be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+419ac3728a3deb443f98ecc82afb385699979e69")]
 [assembly: System.Reflection.AssemblyProductAttribute("BasketIQ.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BasketIQ.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
