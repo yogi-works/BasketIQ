@@ -1,0 +1,90 @@
+/* ── Google Font ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── CSS Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Global Base ─────────────────────────────────────────────────── */
+html, body {
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  background: #0F172A;       /* BasketIQ navy — dark theme base */
+  color: #F8FAFC;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* ── Scrollbar (Webkit) ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ── Typography ──────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: #10B981;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+/* ── Angular Material Theme Override ─────────────────────────────── */
+/* Applied globally so Angular Material components match dark theme  */
+.mat-mdc-form-field {
+  --mdc-filled-text-field-container-color: #1E293B;
+  --mdc-filled-text-field-label-text-color: #94A3B8;
+  --mdc-filled-text-field-input-text-color: #F8FAFC;
+}
+
+/* ── Utility Classes ─────────────────────────────────────────────── */
+.text-emerald { color: #10B981; }
+.text-amber   { color: #F59E0B; }
+.text-slate   { color: #94A3B8; }
+.text-white   { color: #F8FAFC; }
+
+.bg-navy  { background: #0F172A; }
+.bg-navy2 { background: #1E293B; }
+
+/* ── Page Transition ─────────────────────────────────────────────── */
+/* Smooth fade when navigating between pages */
+router-outlet + * {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reduced Motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
