@@ -2,7 +2,7 @@
 
 namespace BasketIQ.API.Services
 {
-    public class HomeService : HomeInterface
+    public class HomeService : IHomeInterface
     {
     }
 }

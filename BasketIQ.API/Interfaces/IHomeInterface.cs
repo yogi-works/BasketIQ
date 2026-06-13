@@ -1,6 +1,6 @@
 ﻿namespace BasketIQ.API.Interfaces
 {
-    public interface HomeInterface
+    public interface IHomeInterface
     {
     }
 }
