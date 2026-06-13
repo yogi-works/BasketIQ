@@ -1,0 +1,390 @@
+{
+  "company": {
+    "name": "NexusTech Solutions",
+    "industry": "Software & AI",
+    "founded": 2018,
+    "headquarters": "Seattle, WA",
+    "revenue_usd": 15000000,
+    "is_public": false
+  },
+  "skills_catalog": [
+    {
+      "id": "SKILL-01",
+      "name": "C#",
+      "category": "Backend"
+    },
+    {
+      "id": "SKILL-02",
+      "name": ".NET Core",
+      "category": "Backend"
+    },
+    {
+      "id": "SKILL-03",
+      "name": "Python",
+      "category": "Backend/Data"
+    },
+    {
+      "id": "SKILL-04",
+      "name": "React",
+      "category": "Frontend"
+    },
+    {
+      "id": "SKILL-05",
+      "name": "Azure",
+      "category": "Cloud/DevOps"
+    },
+    {
+      "id": "SKILL-06",
+      "name": "SQL Server",
+      "category": "Database"
+    },
+    {
+      "id": "SKILL-07",
+      "name": "Docker",
+      "category": "Cloud/DevOps"
+    },
+    {
+      "id": "SKILL-08",
+      "name": "Machine Learning",
+      "category": "Data Science"
+    },
+    {
+      "id": "SKILL-09",
+      "name": "System Architecture",
+      "category": "Architecture"
+    },
+    {
+      "id": "SKILL-10",
+      "name": "Project Management",
+      "category": "Management"
+    }
+  ],
+  "projects": [
+    {
+      "id": "PRJ-901",
+      "name": "Project Alpha (Cloud Migration)",
+      "status": "Active",
+      "budget": 250000.00,
+      "technologies_used": [ "C#", ".NET Core", "Azure", "SQL Server" ]
+    },
+    {
+      "id": "PRJ-902",
+      "name": "Project Cerebro (AI Analytics Dash)",
+      "status": "Active",
+      "budget": 420000.00,
+      "technologies_used": [ "Python", "Machine Learning", "React", "Docker" ]
+    },
+    {
+      "id": "PRJ-903",
+      "name": "Project Legacy Care (Maintenance)",
+      "status": "In Maintenance",
+      "budget": 85000.00,
+      "technologies_used": [ "C#", "SQL Server" ]
+    }
+  ],
+  "departments": [
+    {
+      "id": "DEPT-01",
+      "name": "Engineering",
+      "budget": 850000,
+      "manager_id": "EMP-101"
+    },
+    {
+      "id": "DEPT-02",
+      "name": "Data Analytics",
+      "budget": 550000,
+      "manager_id": "EMP-201"
+    }
+  ],
+  "roles_hierarchy": [
+    {
+      "title": "VP of Engineering",
+      "department_id": "DEPT-01",
+      "reports_to_title": null
+    },
+    {
+      "title": "Engineering Manager",
+      "department_id": "DEPT-01",
+      "reports_to_title": "VP of Engineering"
+    },
+    {
+      "title": "Senior Software Engineer",
+      "department_id": "DEPT-01",
+      "reports_to_title": "Engineering Manager"
+    },
+    {
+      "title": "Software Engineer",
+      "department_id": "DEPT-01",
+      "reports_to_title": "Senior Software Engineer"
+    },
+    {
+      "title": "Director of Data",
+      "department_id": "DEPT-02",
+      "reports_to_title": null
+    },
+    {
+      "title": "Senior Data Scientist",
+      "department_id": "DEPT-02",
+      "reports_to_title": "Director of Data"
+    },
+    {
+      "title": "Data Analyst",
+      "department_id": "DEPT-02",
+      "reports_to_title": "Senior Data Scientist"
+    }
+  ],
+  "employees": [
+    {
+      "id": "EMP-101",
+      "name": "Sarah Connor",
+      "department_id": "DEPT-01",
+      "role_title": "VP of Engineering",
+      "salary": 185000.00,
+      "city": "Seattle",
+      "joining_date": "2018-05-12",
+      "days_worked": 2955,
+      "is_remote": false,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-09",
+          "years_experience": 12
+        },
+        {
+          "skill_id": "SKILL-10",
+          "years_experience": 8
+        },
+        {
+          "skill_id": "SKILL-01",
+          "years_experience": 15
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-901",
+          "role_in_project": "Stakeholder"
+        },
+        {
+          "project_id": "PRJ-902",
+          "role_in_project": "Sponsor"
+        }
+      ]
+    },
+    {
+      "id": "EMP-102",
+      "name": "Alex Mercer",
+      "department_id": "DEPT-01",
+      "role_title": "Engineering Manager",
+      "salary": 140000.00,
+      "city": "Austin",
+      "joining_date": "2020-03-15",
+      "days_worked": 2282,
+      "is_remote": true,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-10",
+          "years_experience": 5
+        },
+        {
+          "skill_id": "SKILL-01",
+          "years_experience": 8
+        },
+        {
+          "skill_id": "SKILL-06",
+          "years_experience": 7
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-901",
+          "role_in_project": "Project Manager"
+        }
+      ]
+    },
+    {
+      "id": "EMP-103",
+      "name": "Elena Rostova",
+      "department_id": "DEPT-01",
+      "role_title": "Senior Software Engineer",
+      "salary": 115000.00,
+      "city": "Boston",
+      "joining_date": "2021-08-22",
+      "days_worked": 1757,
+      "is_remote": true,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-01",
+          "years_experience": 6
+        },
+        {
+          "skill_id": "SKILL-02",
+          "years_experience": 5
+        },
+        {
+          "skill_id": "SKILL-05",
+          "years_experience": 4
+        },
+        {
+          "skill_id": "SKILL-07",
+          "years_experience": 3
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-901",
+          "role_in_project": "Technical Lead"
+        },
+        {
+          "project_id": "PRJ-903",
+          "role_in_project": "Consultant"
+        }
+      ]
+    },
+    {
+      "id": "EMP-104",
+      "name": "David Kim",
+      "department_id": "DEPT-01",
+      "role_title": "Software Engineer",
+      "salary": 85000.00,
+      "city": "Seattle",
+      "joining_date": "2023-01-10",
+      "days_worked": 1251,
+      "is_remote": false,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-04",
+          "years_experience": 2
+        },
+        {
+          "skill_id": "SKILL-01",
+          "years_experience": 3
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-901",
+          "role_in_project": "Fullstack Developer"
+        }
+      ]
+    },
+    {
+      "id": "EMP-105",
+      "name": "Rachel Green",
+      "department_id": "DEPT-01",
+      "role_title": "Software Engineer",
+      "salary": 82000.00,
+      "city": "New York",
+      "joining_date": "2024-06-01",
+      "days_worked": 743,
+      "is_remote": true,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-01",
+          "years_experience": 2
+        },
+        {
+          "skill_id": "SKILL-02",
+          "years_experience": 2
+        },
+        {
+          "skill_id": "SKILL-06",
+          "years_experience": 1
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-903",
+          "role_in_project": "Backend Developer"
+        }
+      ]
+    },
+    {
+      "id": "EMP-201",
+      "name": "Marcus Aurelius",
+      "department_id": "DEPT-02",
+      "role_title": "Director of Data",
+      "salary": 160000.00,
+      "city": "Seattle",
+      "joining_date": "2019-11-01",
+      "days_worked": 2417,
+      "is_remote": false,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-03",
+          "years_experience": 10
+        },
+        {
+          "skill_id": "SKILL-08",
+          "years_experience": 8
+        },
+        {
+          "skill_id": "SKILL-10",
+          "years_experience": 6
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-902",
+          "role_in_project": "Data Strategy Lead"
+        }
+      ]
+    },
+    {
+      "id": "EMP-202",
+      "name": "Chloe Fraser",
+      "department_id": "DEPT-02",
+      "role_title": "Senior Data Scientist",
+      "salary": 125000.00,
+      "city": "San Francisco",
+      "joining_date": "2022-04-05",
+      "days_worked": 1531,
+      "is_remote": true,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-03",
+          "years_experience": 5
+        },
+        {
+          "skill_id": "SKILL-08",
+          "years_experience": 4
+        },
+        {
+          "skill_id": "SKILL-07",
+          "years_experience": 2
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-902",
+          "role_in_project": "ML Architecture Engineer"
+        }
+      ]
+    },
+    {
+      "id": "EMP-203",
+      "name": "Sam Porter",
+      "department_id": "DEPT-02",
+      "role_title": "Data Analyst",
+      "salary": 72000.00,
+      "city": "Denver",
+      "joining_date": "2025-01-15",
+      "days_worked": 515,
+      "is_remote": true,
+      "skills_mastered": [
+        {
+          "skill_id": "SKILL-03",
+          "years_experience": 2
+        },
+        {
+          "skill_id": "SKILL-06",
+          "years_experience": 3
+        }
+      ],
+      "assigned_projects": [
+        {
+          "project_id": "PRJ-902",
+          "role_in_project": "Data Reporter"
+        }
+      ]
+    }
+  ]
+}
