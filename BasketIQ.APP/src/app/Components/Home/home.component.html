@@ -1,0 +1,188 @@
+<!-- Ticker Bar -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <ng-container *ngFor="let item of tickerItems">
+      <div class="ticker-item">
+        {{ item.emoji }} {{ item.product }}&nbsp;
+        <b>₹{{ item.oldPrice }}</b>&nbsp;→&nbsp;
+        <b class="new-price">₹{{ item.newPrice }}</b>
+        on {{ item.platform }}
+        <span class="save-badge">Save ₹{{ getSaving(item) }}</span>
+      </div>
+      <span class="ticker-sep">•</span>
+    </ng-container>
+    <!-- Duplicate for seamless loop -->
+    <ng-container *ngFor="let item of tickerItems">
+      <div class="ticker-item">
+        {{ item.emoji }} {{ item.product }}&nbsp;
+        <b>₹{{ item.oldPrice }}</b>&nbsp;→&nbsp;
+        <b class="new-price">₹{{ item.newPrice }}</b>
+        on {{ item.platform }}
+        <span class="save-badge">Save ₹{{ getSaving(item) }}</span>
+      </div>
+      <span class="ticker-sep">•</span>
+    </ng-container>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="pulse-dot"></span>
+    Live prices across 6 platforms
+  </div>
+
+  <h1>
+    Stop overpaying<br>
+    <span class="highlight">for groceries.</span><br>
+    <span class="dim">Compare. Save. Done.</span>
+  </h1>
+
+  <p class="hero-sub">
+    BasketIQ scans Blinkit, Zepto, BigBasket, JioMart and more —
+    so you always know who has the best price before you order.
+  </p>
+
+  <!-- Search Box -->
+  <div class="search-wrap">
+    <div class="search-box">
+      <input
+        type="text"
+        placeholder="Search for milk, onions, atta, eggs…"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onSearch()"
+      />
+      <button class="search-btn" (click)="onSearch()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        Compare
+      </button>
+    </div>
+
+    <!-- Quick Suggestions -->
+    <div class="search-suggestions">
+      <span
+        *ngFor="let s of suggestions"
+        (click)="onSuggestionClick(s.label)"
+      >{{ s.emoji }} {{ s.label }}</span>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="stat" *ngFor="let stat of stats">
+    <div class="stat-num">{{ stat.value }}</div>
+    <div class="stat-label">{{ stat.label }}</div>
+  </div>
+</div>
+
+<!-- Platforms -->
+<div class="platforms">
+  <p class="section-label">Platforms we compare</p>
+  <div class="platform-chips">
+    <div class="platform-chip" *ngFor="let p of platforms">
+      <span class="dot" [style.background]="p.color"></span>
+      {{ p.name }}
+    </div>
+  </div>
+</div>
+
+<!-- Featured Comparisons -->
+<section class="featured">
+  <div class="section-header">
+    <h2 class="section-title">Featured comparisons</h2>
+    <a routerLink="/search" class="section-link">View all →</a>
+  </div>
+
+  <div class="cards">
+    <div
+      class="product-card"
+      *ngFor="let product of featuredProducts"
+    >
+      <div class="card-tag" [class.tag-deal]="product.tag === 'deal'" [class.tag-popular]="product.tag === 'popular'">
+        {{ product.tag === 'deal' ? 'Deal' : 'Popular' }}
+      </div>
+
+      <div class="product-name">{{ product.name }}</div>
+      <div class="product-meta">{{ product.meta }}</div>
+
+      <div class="price-rows">
+        <div
+          class="price-row"
+          *ngFor="let p of product.prices"
+          [class.best]="p.isBest"
+        >
+          <div class="platform-name">
+            <span class="platform-dot" [style.background]="p.color"></span>
+            {{ p.platform }}
+          </div>
+          <div class="price-info">
+            <span class="price">₹{{ p.price }}</span>
+            <span class="price-old" *ngIf="p.originalPrice">₹{{ p.originalPrice }}</span>
+            <span class="best-badge" *ngIf="p.isBest">Best</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery">
+        🚴 Fastest: <span class="delivery-highlight">{{ product.fastestDelivery }}</span>
+      </div>
+
+      <button class="compare-btn" (click)="onCompare(product.id)">
+        See full comparison →
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Today's Deals -->
+<section class="deals-section">
+  <div class="section-header">
+    <h2 class="section-title">🏷️ Today's best deals</h2>
+    <a routerLink="/deals" class="section-link">All deals →</a>
+  </div>
+
+  <div class="deal-cards">
+    <div class="deal-card" *ngFor="let deal of deals">
+      <div class="deal-discount">
+        {{ deal.discount }}%<span class="off-text"> OFF</span>
+      </div>
+      <div class="deal-name">{{ deal.name }}</div>
+      <div class="deal-platform">
+        <span class="dot" [style.background]="deal.platformColor"></span>
+        {{ deal.platform }}
+      </div>
+      <div class="deal-price">
+        ₹{{ deal.price }}
+        <span class="deal-price-old">₹{{ deal.originalPrice }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-section">
+  <h2>How BasketIQ works</h2>
+  <p class="how-sub">Three steps to smarter grocery shopping</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <h3>Search any product</h3>
+      <p>Type a product name — milk, atta, onions. We find it across all major platforms instantly.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">⚖️</div>
+      <h3>Compare prices live</h3>
+      <p>See prices, offers, delivery time, and stock status side by side. Updated every 10 minutes.</p>
+    </div>
+    <div class="step">
+      <div class="step-icon">💰</div>
+      <h3>Save every order</h3>
+      <p>Pick the best deal and order directly. Set alerts for price drops on your favourite products.</p>
+    </div>
+  </div>
+</section>
