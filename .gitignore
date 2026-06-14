@@ -37,3 +37,6 @@
 /BasketIQ.API/obj/project.nuget.cache
 /BasketIQ.API/obj/Debug/net10.0/BasketIQ.API.AssemblyInfo.cs
 /BasketIQ.API/obj/Debug/net10.0/BasketIQ.API.AssemblyInfoInputs.cache
+/BasketIQ.DB/obj/Debug
+/BasketIQ.DB/bin/Debug
+/BasketIQ.DB/.vs/BasketIQ.DB.slnx
