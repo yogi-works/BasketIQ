@@ -5,8 +5,7 @@ namespace BasketIQ.API.Controllers.CompanyData
 {
     [ApiController]
     [Route("api/[controller]")]
-
-    public class ProjectController : Controller
+    public class ProjectController : ControllerBase
     {
         private readonly IProjectInterface _projectService;
 
@@ -15,11 +14,24 @@ namespace BasketIQ.API.Controllers.CompanyData
             _projectService = projectService;
         }
 
-        [HttpGet("details")]
-        public IActionResult GetProjectDetails()
+        [HttpGet]
+
+        public IActionResult GetAllProjects()
         {
-            var abc = _projectService.GetProjectDetail();
-            return Ok(abc);
+            var result = _projectService.GetAllProjects();  
+            return Ok(result);
+        }
+
+        [HttpGet("PrjectById")]
+        public IActionResult GetProjectById(string id)
+        {
+            var result = _projectService.GetProjectById(id);  
+            
+
+            if (result == null)
+                return NotFound($"Project with id {id} not found");
+
+            return Ok(result);
         }
     }
 }

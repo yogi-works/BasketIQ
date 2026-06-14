@@ -1,19 +1,35 @@
 ﻿using BasketIQ.API.Interfaces.CompanyData;
-
+using BasketIQ.API.Models.CompanyData;
+using System.Text.Json;
 namespace BasketIQ.API.Services.CompanyData
 {
     public class ProjectService : IProjectInterface
+
     {
-        public object GetProjectDetail()
+        private List<Project> LoadProjects()
         {
-            return new
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "company-data.json");
+            var jsonString = File.ReadAllText(filePath);
+
+            var options = new JsonSerializerOptions
             {
-                Id = 1,
-                Name = "Project 1",
-                Description = "This is a sample project.",
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now.AddMonths(6)
+                PropertyNameCaseInsensitive = true
             };
+
+            var data = JsonSerializer.Deserialize<RootData>(jsonString, options);
+            return data.Projects;
         }
-    }
-}
+
+        // Get all projects
+        public List<Project> GetAllProjects()
+        {
+            return LoadProjects();
+        }
+
+        // Get single project by id e.g PRJ-901
+        public Project GetProjectById(string id)
+        {
+            var projects = LoadProjects();
+            return projects.FirstOrDefault(p => p.Id == id);
+        }
+    } }

@@ -1,7 +1,10 @@
-﻿namespace BasketIQ.API.Interfaces.CompanyData
+﻿using BasketIQ.API.Models.CompanyData;
+
+namespace BasketIQ.API.Interfaces.CompanyData
 {
     public interface IProjectInterface
     {
-        public object GetProjectDetail();
+        List<Project> GetAllProjects();
+        Project GetProjectById(string id);
     }
 }
