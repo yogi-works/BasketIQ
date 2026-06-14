@@ -1,3 +1,7 @@
+using BasketIQ.API.Services.CompanyData;
+using BasketIQ.API.Interfaces.CompanyData;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddScoped<IProjectInterface, ProjectService>();
 
 var app = builder.Build();
 

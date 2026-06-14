@@ -1,12 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BasketIQ.API.Interfaces.CompanyData;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BasketIQ.API.Controllers.CompanyData
 {
+    [ApiController]
+    [Route("api/[controller]")]
+
     public class ProjectController : Controller
     {
-        public IActionResult Index()
+        private readonly IProjectInterface _projectService;
+
+        public ProjectController(IProjectInterface projectService)
         {
-            return View();
+            _projectService = projectService;
+        }
+
+        [HttpGet("details")]
+        public IActionResult GetProjectDetails()
+        {
+            var abc = _projectService.GetProjectDetail();
+            return Ok(abc);
         }
     }
 }

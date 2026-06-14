@@ -2,5 +2,6 @@
 {
     public interface IProjectInterface
     {
+        public object GetProjectDetail();
     }
 }
