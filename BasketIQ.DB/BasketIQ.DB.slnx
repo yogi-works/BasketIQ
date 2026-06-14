@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BasketIQ.DB.sqlproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
