@@ -56,5 +56,22 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Table" />
+    <Folder Include="View" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Table\Category.sql" />
+    <Build Include="Table\Product.sql" />
+    <Build Include="Table\Plateform.sql" />
+    <Build Include="Table\PlatformProduct.sql" />
+    <Build Include="Table\Price.sql" />
+    <Build Include="Table\PriceHistory.sql" />
+    <Build Include="Table\Users.sql" />
+    <Build Include="Table\Wishlist.sql" />
+    <Build Include="Table\PriceAlert.sql" />
+    <Build Include="Table\ScraperLog.sql" />
+    <Build Include="Table\SearchLog.sql" />
+    <Build Include="View\vw_ProductPriceComparison.sql" />
+    <Build Include="View\vw_BestPricePerProduct.sql" />
   </ItemGroup>
 </Project>

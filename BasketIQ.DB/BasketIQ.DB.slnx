@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="BasketIQ.DB.sqlproj">
+  <Project Path="BasketIQ.DB.sqlproj" Id="c2713c89-ad2a-4391-848e-857f55e1395e">
     <Build />
     <Deploy />
   </Project>
