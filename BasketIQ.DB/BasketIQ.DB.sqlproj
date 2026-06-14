@@ -58,6 +58,7 @@
     <Folder Include="Properties" />
     <Folder Include="Table" />
     <Folder Include="View" />
+    <Folder Include="Schema" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Table\Category.sql" />
@@ -73,5 +74,6 @@
     <Build Include="Table\SearchLog.sql" />
     <Build Include="View\vw_ProductPriceComparison.sql" />
     <Build Include="View\vw_BestPricePerProduct.sql" />
+    <Build Include="Schema\InsertTable.sql" />
   </ItemGroup>
 </Project>
