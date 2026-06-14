@@ -12,7 +12,7 @@
   {
     "ContainingType": "BasketIQ.API.Controllers.CompanyData.ProjectController",
     "Method": "GetProjectById",
-    "RelativePath": "api/Project/{id}",
+    "RelativePath": "api/Project/PrjectById",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -20,6 +20,22 @@
       {
         "Name": "id",
         "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BasketIQ.API.Controllers.CompanyData.ProjectController",
+    "Method": "UpdateProject",
+    "RelativePath": "api/Project/update",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BasketIQ.API.Models.CompanyData.Project",
         "IsRequired": true
       }
     ],

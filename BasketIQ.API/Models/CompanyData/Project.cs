@@ -13,5 +13,15 @@
         {
             public List<Project> Projects { get; set; }
         }
+
+    public class UpdateProjectRequest
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Status { get; set; }
+        public double Budget { get; set; }
+        public List<string> Technologies_Used { get; set; }
     }
+
+}
 

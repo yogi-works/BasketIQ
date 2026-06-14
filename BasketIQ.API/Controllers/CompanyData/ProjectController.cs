@@ -1,5 +1,6 @@
 ﻿using BasketIQ.API.Interfaces.CompanyData;
 using Microsoft.AspNetCore.Mvc;
+using BasketIQ.API.Models.CompanyData;
 
 namespace BasketIQ.API.Controllers.CompanyData
 {
@@ -33,5 +34,20 @@ namespace BasketIQ.API.Controllers.CompanyData
 
             return Ok(result);
         }
+
+
+        [HttpPost("update")]
+        public IActionResult UpdateProject([FromBody] Project request)
+        {
+            var result = _projectService.UpdateProject(request);
+
+            if (result == null)
+                return NotFound($"Project with id {request.Id} not found");
+
+            return Ok(result);
+        }
+
+
+
     }
 }

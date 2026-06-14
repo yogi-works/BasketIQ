@@ -6,5 +6,7 @@ namespace BasketIQ.API.Interfaces.CompanyData
     {
         List<Project> GetAllProjects();
         Project GetProjectById(string id);
+
+        string UpdateProject(Project request);
     }
 }

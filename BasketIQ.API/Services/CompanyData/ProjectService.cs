@@ -32,4 +32,37 @@ namespace BasketIQ.API.Services.CompanyData
             var projects = LoadProjects();
             return projects.FirstOrDefault(p => p.Id == id);
         }
-    } }
+
+
+        public string UpdateProject(Project request)
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "company-data.json");
+            var jsonString = File.ReadAllText(filePath);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                WriteIndented = true
+            };
+
+            var data = JsonSerializer.Deserialize<RootData>(jsonString, options);
+
+            var project = data.Projects.FirstOrDefault(p => p.Id == request.Id);
+
+            if (project == null) return null;
+
+            project.Name = request.Name;
+            project.Status = request.Status;
+            project.Budget = request.Budget;
+            project.Technologies_Used = request.Technologies_Used;
+
+            // Save back to JSON file
+            var updatedJson = JsonSerializer.Serialize(data, options);
+            File.WriteAllText(filePath, updatedJson);
+
+            return "Records Updated Successfully....!!!!";
+        }
+
+
+    } 
+}
