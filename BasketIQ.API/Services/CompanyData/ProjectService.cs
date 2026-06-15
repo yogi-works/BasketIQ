@@ -64,5 +64,62 @@ namespace BasketIQ.API.Services.CompanyData
         }
 
 
+
+        public string AddProject(Project request)
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "company-data.json");
+            var jsonString = File.ReadAllText(filePath);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                WriteIndented = true
+            };
+
+            var data = JsonSerializer.Deserialize<RootData>(jsonString, options);
+
+            var existing = data.Projects.FirstOrDefault(p => p.Id == request.Id);
+            if (existing != null) return null;
+
+            data.Projects.Add(request);
+
+            var updatedJson = JsonSerializer.Serialize(data, options);
+            File.WriteAllText(filePath, updatedJson);
+
+            return "Project Added Successfully....!!!!";
+        }
+
+        public string DeleteProject(string id)
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "company-data.json");
+            var jsonString = File.ReadAllText(filePath);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                WriteIndented = true
+            };
+
+            var data = JsonSerializer.Deserialize<RootData>(jsonString, options);
+
+            var project = data.Projects.FirstOrDefault(p => p.Id == id);
+
+            // If project not found return null
+            if (project == null) return null;
+
+            data.Projects.Remove(project);
+
+            var updatedJson = JsonSerializer.Serialize(data, options);
+            File.WriteAllText(filePath, updatedJson);
+
+            return $"Project '{project.Name}' Deleted Successfully....!!!!";
+        }
+
+
+
+
+
+
+
     } 
 }

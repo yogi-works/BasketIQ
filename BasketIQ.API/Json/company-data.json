@@ -32,6 +32,18 @@
         "C#",
         "SQL Server"
       ]
+    },
+    {
+      "Id": "PRJ-904",
+      "Name": "Project Nova (Cloud Migration)",
+      "Status": "Active",
+      "Budget": 250000,
+      "Technologies_Used": [
+        "Azure",
+        "Terraform",
+        "c#",
+        "Docker"
+      ]
     }
   ]
 }

@@ -48,6 +48,30 @@ namespace BasketIQ.API.Controllers.CompanyData
         }
 
 
+        [HttpPost("add")]
+        public IActionResult AddProject([FromBody] Project request)
+        {
+            var result = _projectService.AddProject(request);
+
+            if (result == null)
+                return BadRequest($"Project with Id '{request.Id}' already exists.");
+
+            return Ok(result);
+        }
+
+        [HttpDelete("delete/{id}")]
+        public IActionResult DeleteProject(string id)
+        {
+            var result = _projectService.DeleteProject(id);
+
+            if (result == null)
+                return NotFound($"Project with Id '{id}' not found.");
+
+            return Ok(result);
+        }
+
+
+
 
     }
 }
