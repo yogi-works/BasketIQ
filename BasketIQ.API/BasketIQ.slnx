@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../BasketIQ.Data/BasketIQ.Data.csproj" Id="fed50abb-2587-46ba-985a-31f2420545f6" />
+  <Project Path="../BasketIQ.Test/BasketIQ.Test.csproj" Id="56e18fd4-abc5-463a-8c2a-4a1fa162d221" />
+  <Project Path="D:/Workspace/Projects/BasketIQ/BasketIQ.API/BasketIQ.API.csproj" />
+  <Project Path="D:/Workspace/Projects/BasketIQ/BasketIQ.Core/BasketIQ.Core.csproj" Id="2679afe5-de3f-477e-b06d-54d5f5858e88" />
+</Solution>
