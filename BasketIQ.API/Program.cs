@@ -10,6 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IProjectInterface, ProjectService>();
+// Add this with your other service registrations
+builder.Services.AddScoped<IDepartmentInterface, DepartmentService>();
+
 
 var app = builder.Build();
 

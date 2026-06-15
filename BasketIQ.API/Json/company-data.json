@@ -131,6 +131,18 @@
       "Name": "Data Analytics",
       "Budget": 550000,
       "Manager_Id": "EMP-201"
+    },
+    {
+      "Id": "DEPT-03",
+      "Name": "DevOps \u0026 Infrastructure",
+      "Budget": 400000,
+      "Manager_Id": "EMP-103"
+    },
+    {
+      "Id": "DEPT-04",
+      "Name": "Cybersecurity",
+      "Budget": 600000,
+      "Manager_Id": "EMP-104"
     }
   ],
   "Roles_Hierarchy": [
