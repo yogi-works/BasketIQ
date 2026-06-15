@@ -59,13 +59,13 @@ namespace BasketIQ.API.Controllers.CompanyData
             return Ok(result);
         }
 
-        [HttpDelete("delete/{id}")]
-        public IActionResult DeleteProject(string id)
+        [HttpDelete("delete")]
+        public IActionResult DeleteProject([FromBody] Project request)
         {
-            var result = _projectService.DeleteProject(id);
+            var result = _projectService.DeleteProject(request);
 
             if (result == null)
-                return NotFound($"Project with Id '{id}' not found.");
+                return NotFound($"Project with Id '{request.Id}' not found.");
 
             return Ok(result);
         }

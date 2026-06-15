@@ -28,14 +28,14 @@
   {
     "ContainingType": "BasketIQ.API.Controllers.CompanyData.ProjectController",
     "Method": "DeleteProject",
-    "RelativePath": "api/Project/delete/{id}",
+    "RelativePath": "api/Project/delete",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.String",
+        "Name": "request",
+        "Type": "BasketIQ.API.Models.CompanyData.Project",
         "IsRequired": true
       }
     ],

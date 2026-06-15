@@ -89,7 +89,7 @@ namespace BasketIQ.API.Services.CompanyData
             return "Project Added Successfully....!!!!";
         }
 
-        public string DeleteProject(string id)
+        public string DeleteProject(Project request)
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Json", "company-data.json");
             var jsonString = File.ReadAllText(filePath);
@@ -102,7 +102,7 @@ namespace BasketIQ.API.Services.CompanyData
 
             var data = JsonSerializer.Deserialize<RootData>(jsonString, options);
 
-            var project = data.Projects.FirstOrDefault(p => p.Id == id);
+            var project = data.Projects.FirstOrDefault(p => p.Id == request.Id);
 
             // If project not found return null
             if (project == null) return null;

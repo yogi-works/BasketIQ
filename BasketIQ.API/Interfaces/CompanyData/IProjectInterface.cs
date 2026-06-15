@@ -11,6 +11,6 @@ namespace BasketIQ.API.Interfaces.CompanyData
 
         string AddProject(Project request);
 
-        string DeleteProject(string id);
+        string DeleteProject(Project request);
     }
 }
